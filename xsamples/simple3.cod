@@ -1,0 +1,29 @@
+DMP +
+LIT 0 i
+LIT 0 j
+LIT 5
+LIT 42
+LIT 314
+STORE 1 j
+STORE 0 i
+LOAD 0 i
+LOAD 1 j
+POP 2
+LOAD 0 i
+LOAD 0 i
+BOP -
+FALSEBRANCH end
+LIT 99999
+LABEL end
+GOTO fstop
+LABEL fstart
+LIT 4
+BOP +
+RETURN fstart
+LABEL fstop
+ARGS 1
+CALL fstart
+STORE 1 j
+READ
+WRITE
+HALT 

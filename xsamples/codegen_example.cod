@@ -1,0 +1,34 @@
+GOTO start<<1>>
+LABEL Read
+READ
+RETURN Read
+LABEL Write
+LOAD 0 dummyFormal
+WRITE
+RETURN Write
+LABEL start<<1>>
+LIT 0 i
+LIT 0
+STORE 0 i
+LABEL while<<3>>
+LOAD 0 i
+LIT 5
+BOP <
+FALSEBRANCH continue<<2>>
+LOAD 0 i
+LIT 1
+BOP +
+STORE 0 i
+POP 0
+GOTO while<<3>>
+LABEL continue<<2>>
+LABEL iterate<<5>>
+LIT 1
+LIT 5
+BOP <
+FALSEBRANCH continue<<4>>
+POP 0
+GOTO iterate<<5>>
+LABEL continue<<4>>
+POP 1
+HALT

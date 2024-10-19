@@ -1,0 +1,24 @@
+GOTO start<<1>>
+LABEL Read
+READ
+RETURN Read
+LABEL Write
+LOAD 0 dummyFormal
+WRITE
+RETURN Write
+LABEL start<<1>>
+LIT 0 i
+LIT 0 b
+GOTO continue<<3>>
+LABEL f<<2>>
+LIT 42
+RETURN f<<2>>
+POP 0
+LIT 0 DEFAULT-RETURN-VALUE
+RETURN f<<2>>
+LABEL continue<<3>>
+ARGS 0
+CALL f<<2>>
+STORE 0 i
+POP 2
+HALT
